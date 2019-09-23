@@ -14,6 +14,17 @@
     <v-content>
       <router-view />
     </v-content>
+    <v-footer
+      fixed
+      class="font-weight-medium"
+    >
+      <v-col
+        class="text-center"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>The Solutionists</strong>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
@@ -26,10 +37,10 @@ export default {
     NavigationDrawer
   },
   beforeMount: function() {
-    this.$vuetify.theme.dark = true;
+    this.$vuetify.theme.dark = this.dark;
   },
   data: () => ({
-    dark: false
+    dark: true
   }),
   methods: {
     toggleDrawer: function() {
